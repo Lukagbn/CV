@@ -185,7 +185,6 @@ header a,
   justify-content: center;
   gap: 25px;
 }
-
 .social-links img {
   max-width: 32.48px;
   width: 100%;
@@ -204,7 +203,7 @@ header a,
   width: 100%;
 }
 .diagram {
-  margin-top: 15px#FD6F00;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -219,7 +218,9 @@ header a,
 }
 .diagram .fill {
   position: absolute;
-  width: 72%;
+  width: 0%;
+  /* width: 72%; */
+  transition: 1s ease-in-out;
   background-color: #fd6f00;
   height: 100%;
   border-top-left-radius: 6px;
@@ -228,7 +229,9 @@ header a,
 .diagram .circle {
   position: absolute;
   top: 50%;
-  left: 70%;
+  left: 0%;
+  /* left: 70%; */
+  transition: 1s ease-in-out;
   transform: translateY(-50%);
   border-radius: 50%;
   height: 32px;
