@@ -131,7 +131,8 @@ header a,
 .text-wrapper .description,
 .service-text-container p,
 .myProjects-container p,
-.testimonials-text-container p {
+.testimonials-text-container p,
+.contact-container p {
   color: #ffffff;
   font-size: 21px;
   font-family: "PoppinsRegular";
@@ -204,7 +205,8 @@ header a,
 .text-wrapper h2,
 .service-text-container h2,
 .myProjects-container h2,
-.testimonials-text-container h2 {
+.testimonials-text-container h2,
+.contact-container h2 {
   font-family: "PoppinsSemiBold";
   line-height: 100%;
   font-size: 65px;
@@ -257,12 +259,14 @@ header a,
 }
 .service-text-container,
 .myProjects-text-container,
-.testimonials-text-container {
+.testimonials-text-container,
+.contact-container {
   text-align: center;
 }
 .service-text-container p,
 .myProjects-text-container p,
-.testimonials-text-container p {
+.testimonials-text-container p,
+.contact-container p {
   margin-top: 20px;
   text-align: center;
 }
@@ -411,7 +415,7 @@ header a,
   line-height: 100%;
   text-align: justify;
   letter-spacing: 0.64px;
-  top: 86%;
+  top: 89%;
   margin-left: 10px;
 }
 .testimonials-slide-wrapper span {
@@ -448,4 +452,62 @@ header a,
 }
 .dot.active {
   background-color: #fd6f00;
+}
+.contact-container {
+  margin-top: 90px;
+}
+.contact-form-container {
+  margin-top: 50px;
+}
+.contact-form-container input {
+  max-width: 312px;
+  width: 100%;
+  border-radius: 14px;
+  border: 1px solid #afafaf;
+  outline: none;
+  font-size: 21px;
+  padding-left: 25px;
+  padding-block: 22px;
+}
+.contact-form-container input::placeholder {
+  font-family: "PoppinsRegular";
+  font-size: 21px;
+}
+form {
+  display: grid;
+  margin: auto;
+  justify-content: center;
+  column-gap: 28px;
+  row-gap: 48px;
+  max-width: 994px;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+}
+textarea {
+  grid-column: 1/4;
+  grid-row: 2;
+  border-radius: 14px;
+  resize: none;
+  border: 1px solid #afafaf;
+  height: 116px;
+  outline: none;
+  padding-top: 22px;
+  padding-left: 25px;
+  font-size: 21px;
+}
+textarea::placeholder {
+  font-family: "PoppinsRegular";
+  font-size: 21px;
+}
+.contact-form-container input[type="submit"] {
+  font-family: "PoppinsSemiBold";
+  font-size: 24px;
+  letter-spacing: 0.72px;
+  line-height: 100%;
+  grid-column: 2;
+  grid-row: 3;
+  padding-left: 0px;
+  background-color: #fd6f00;
+  border: none;
+  color: #ffffff;
 }
