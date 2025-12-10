@@ -42,6 +42,9 @@
 body {
   background-color: #1e1e1e;
 }
+button {
+  cursor: pointer;
+}
 .logo {
   font-family: "Bebas Neue";
   font-size: 28px;
@@ -92,7 +95,6 @@ header a,
   padding: 18px;
   letter-spacing: 0.63px;
   padding-block: 10px;
-  cursor: pointer;
   text-align: justify;
 }
 
@@ -120,7 +122,8 @@ header a,
   letter-spacing: 0.72px;
 }
 .text-wrapper .description,
-.service-text-container p {
+.service-text-container p,
+.myProjects-container p {
   color: #ffffff;
   font-size: 21px;
   font-family: "PoppinsRegular";
@@ -191,7 +194,8 @@ header a,
   cursor: pointer;
 }
 .text-wrapper h2,
-.service-text-container h2 {
+.service-text-container h2,
+.myProjects-container h2 {
   font-family: "PoppinsSemiBold";
   line-height: 100%;
   font-size: 65px;
@@ -219,7 +223,6 @@ header a,
 .diagram .fill {
   position: absolute;
   width: 0%;
-  /* width: 72%; */
   transition: 1s ease-in-out;
   background-color: #fd6f00;
   height: 100%;
@@ -230,7 +233,6 @@ header a,
   position: absolute;
   top: 50%;
   left: 0%;
-  /* left: 70%; */
   transition: 1s ease-in-out;
   transform: translateY(-50%);
   border-radius: 50%;
@@ -239,13 +241,16 @@ header a,
   background-color: #edecec;
   border: 3px solid #fd6f00;
 }
-.services {
+.services-container,
+.myProjects-container {
   margin-top: 140px;
 }
-.service-text-container {
+.service-text-container,
+.myProjects-text-container {
   text-align: center;
 }
-.service-text-container p {
+.service-text-container p,
+.myProjects-text-container p {
   margin-top: 20px;
   text-align: center;
 }
@@ -292,4 +297,47 @@ header a,
 }
 .service-card:nth-of-type(4) .card-head img {
   max-width: 82px;
+}
+.myProjects-container .btn-container {
+  margin-top: 60px;
+  display: flex;
+  gap: 17px;
+  justify-content: center;
+}
+.myProjects-container .btn-container button {
+  padding-block: 10px;
+  padding-inline: 20px;
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.72px;
+  text-align: center;
+}
+.myProjects-container .btn-container button[active] {
+  background-color: #fd6f00;
+  color: white;
+}
+.myProjcets-projects-wrapper {
+  margin-top: 106px;
+  display: flex;
+  justify-content: space-between;
+}
+.myProjcets-projects-wrapper img {
+  width: 100%;
+}
+.myProjcets-projects-wrapper p {
+  color: #fd6f00;
+  font-size: 19px;
+  line-height: 100%;
+  letter-spacing: 0.57px;
+}
+.myProjcets-projects-wrapper h3 {
+  font-family: "PoppinsSemiBold";
+  font-size: 24px;
+  line-height: 100%;
+  letter-spacing: 0.72px;
+  color: #ffffff;
+  margin-top: 10px;
 }
