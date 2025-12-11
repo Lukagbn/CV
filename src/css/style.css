@@ -478,7 +478,7 @@ form {
   margin: auto;
   justify-content: center;
   column-gap: 28px;
-  row-gap: 48px;
+  row-gap: 41px;
   max-width: 994px;
   width: 100%;
   grid-template-columns: repeat(3, 1fr);
@@ -510,4 +510,29 @@ textarea::placeholder {
   background-color: #fd6f00;
   border: none;
   color: #ffffff;
+  margin-top: -10px;
+}
+.footer-navigation {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  margin-top: 290px;
+  gap: 40px;
+}
+.footer-navigation a {
+  font-size: 21px;
+  letter-spacing: 0.63px;
+  color: #ffffff;
+  text-decoration: none;
+}
+.rights {
+  text-align: center;
+  margin-top: 62px;
+  background-color: #121212;
+  color: #ffffff;
+  padding-top: 19px;
+  padding-bottom: 33px;
+  font-size: 21px;
+  letter-spacing: 0.63px;
+  line-height: 100%;
 }
