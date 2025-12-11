@@ -333,6 +333,7 @@ header a,
   line-height: 100%;
   letter-spacing: 0.72px;
   text-align: center;
+  white-space: nowrap;
 }
 .myProjects-container .btn-container button[active] {
   background-color: #fd6f00;
@@ -358,7 +359,7 @@ header a,
   line-height: 100%;
   letter-spacing: 0.72px;
   color: #ffffff;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .testimonials-slider-container {
   margin-top: 80px;

@@ -31,7 +31,7 @@
     font-size: 40px;
   }
   .profile-wrapper.top .text-wrapper .description,
-  button {
+  .profile-wrapper button {
     display: none;
   }
   .text-wrapper h1 {
@@ -87,5 +87,28 @@
   .service-card-container {
     flex-direction: column;
     gap: 22px;
+  }
+  .myProjects-container h2 {
+    font-size: 36px;
+  }
+  .myProjects-text-container,
+  .myProjects-text-container p {
+    text-align: start;
+  }
+  .myProjects-text-container p {
+    margin-top: 40px;
+  }
+  .myProjects-container .btn-container {
+    margin-top: 27px;
+    overflow-x: scroll;
+    justify-content: stretch;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .myProjcets-projects-wrapper {
+    margin-top: 47px;
+    flex-direction: column;
+    gap: 40px;
   }
 }
