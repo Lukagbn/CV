@@ -79,6 +79,7 @@ header.container {
   display: flex;
   gap: 40px;
   list-style: none;
+  align-items: center;
 }
 .header-nav ul li {
   line-height: 100%;
@@ -92,8 +93,10 @@ header a,
   color: #ffffff;
   text-decoration: none;
 }
-
-.header-nav button {
+.burger-btn {
+  display: none;
+}
+.header-nav ul button {
   background-color: #fd6f00;
   outline: none;
   border: none;

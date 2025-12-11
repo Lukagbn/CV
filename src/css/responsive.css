@@ -1,0 +1,91 @@
+@media screen and (max-width: 375px) {
+  .container {
+    max-width: 375px;
+    padding-inline: 14px;
+  }
+
+  header.container {
+    margin-top: 21px;
+  }
+  .header-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    background-color: blue;
+    left: 0;
+    text-align: center;
+    top: 10%;
+  }
+  .burger-btn {
+    display: block;
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+  .profile-wrapper {
+    margin-top: 80px;
+    flex-direction: column;
+  }
+  .text-wrapper .highlight {
+    font-size: 40px;
+  }
+  .profile-wrapper.top .text-wrapper .description,
+  button {
+    display: none;
+  }
+  .text-wrapper h1 {
+    font-family: "PoppinsMedium";
+    font-size: 64px;
+  }
+  .text-wrapper span {
+    font-size: 64px;
+    margin-top: 0px;
+    align-self: flex-start;
+  }
+  .img-wrapper .img-container {
+    flex-direction: column-reverse;
+    gap: 19px;
+  }
+  .img-wrapper .img-container {
+    align-items: start;
+  }
+  .img-wrapper .about-above-img {
+    max-width: 344px;
+  }
+  .img-wrapper .about-bottom-img {
+    display: none;
+  }
+  .social-links {
+    margin-top: 19px;
+  }
+  .text-wrapper h2 {
+    font-size: 36px;
+  }
+  .bottom {
+    margin-top: 62px;
+  }
+  .profile-wrapper.bottom .text-wrapper .description {
+    text-align: start;
+  }
+  .diagram {
+    gap: 28px;
+  }
+  .services-container {
+    margin-top: 74px;
+  }
+  .service-text-container {
+    text-align: start;
+  }
+  .service-text-container p {
+    margin-top: 40px;
+    text-align: start;
+  }
+  .service-text-container h2 {
+    font-size: 36px;
+  }
+  .service-card-container {
+    flex-direction: column;
+    gap: 22px;
+  }
+}
