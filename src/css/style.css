@@ -532,6 +532,10 @@ textarea::placeholder {
   color: #ffffff;
   text-decoration: none;
 }
+.footer-container {
+  display: flex;
+  flex-direction: column;
+}
 .rights {
   text-align: center;
   margin-top: 62px;
@@ -542,4 +546,5 @@ textarea::placeholder {
   font-size: 21px;
   letter-spacing: 0.63px;
   line-height: 100%;
+  width: 100%;
 }

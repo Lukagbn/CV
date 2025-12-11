@@ -160,4 +160,36 @@
   .slider-dots {
     margin-top: 38px;
   }
+  .contact-container h2 {
+    font-size: 36px;
+  }
+  .contact-container p {
+    text-align: start;
+    margin-top: 40px;
+  }
+  .contact-container {
+    text-align: start;
+  }
+  form {
+    max-width: 347px;
+    display: flex;
+    flex-direction: column;
+  }
+  .contact-form-container input {
+    max-width: none;
+  }
+  .footer-container {
+    margin-top: 86px;
+    flex-direction: column-reverse;
+  }
+  .footer-navigation.container {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .rights {
+    font-size: 16px;
+    padding: 48px;
+    margin-top: 55px;
+  }
 }
