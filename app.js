@@ -36,20 +36,6 @@ const observer = new IntersectionObserver((entries) => {
 }, options);
 observer.observe(profileSlider);
 
-// my project button logic
-const btnContainer = document.querySelectorAll(".btn-container button");
-
-btnContainer.forEach((el) => {
-  if (el.hasAttribute("active")) {
-    console.log(el.value);
-  }
-  el.addEventListener("click", () => {
-    btnContainer.forEach((btn) => btn.removeAttribute("active"));
-    el.setAttribute("active", "");
-    console.log(el.value);
-  });
-});
-
 // carousel slider
 const slide = document.querySelectorAll(".testimonials-slide");
 const dot = document.querySelectorAll(".dot");
@@ -87,5 +73,71 @@ slide.forEach((el) => {
   });
   el.addEventListener("mouseleave", () => {
     autoSlider();
+  });
+});
+// my project logic
+const projectsContainer = document.querySelector(
+  ".myProjcets-projects-wrapper"
+);
+const btnContainer = document.querySelectorAll(".btn-container button");
+const startingValue = "Web Design";
+
+btnContainer.forEach((el) => {
+  if (el.hasAttribute("active")) {
+    fetch("./myProjects.json")
+      .then((res) => res.json())
+      .then((result) => {
+        projectsContainer.innerHTML = result
+          .map(
+            (element) =>
+              `
+              <div class="myProjcets-card invisible"data-group="${element.projectGroup}">
+                <img src="${element.projectImg}" alt="project image" />
+                <p>${element.projectName}</p>
+                <h3>${element.projectTitle}</h3>
+              </div>
+            `
+          )
+          .join("");
+        const projectName =
+          projectsContainer.querySelectorAll(".myProjcets-card");
+        projectName.forEach((card) => {
+          if (card.dataset.group === startingValue) {
+            card.classList.toggle("invisible");
+          }
+        });
+      });
+  }
+  el.addEventListener("click", () => {
+    const btnValue = el.value;
+    console.log(btnValue);
+    fetch("./myProjects.json")
+      .then((res) => res.json())
+      .then((result) => {
+        projectsContainer.innerHTML = result
+          .map(
+            (element) =>
+              `
+              <div class="myProjcets-card invisible"data-group="${element.projectGroup}">
+                <img src="${element.projectImg}" alt="project image" />
+                <p>${element.projectName}</p>
+                <h3>${element.projectTitle}</h3>
+              </div>
+            `
+          )
+          .join("");
+        const projectName =
+          projectsContainer.querySelectorAll(".myProjcets-card");
+        projectName.forEach((card) => {
+          if (card.dataset.group === btnValue) {
+            card.classList.toggle("invisible");
+          }
+          if (btnValue === "All") {
+            card.classList.toggle("invisible");
+          }
+        });
+      });
+    btnContainer.forEach((btn) => btn.removeAttribute("active"));
+    el.setAttribute("active", "");
   });
 });

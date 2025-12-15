@@ -134,6 +134,13 @@ header a,
   max-width: 714px;
   width: 100%;
 }
+.text-wrapper button {
+  transition: 0.4s ease-in-out;
+}
+.text-wrapper button:hover {
+  color: #fd6f00;
+  background-color: #ffffff;
+}
 .text-wrapper {
   display: flex;
   flex-direction: column;
@@ -359,6 +366,9 @@ header a,
   margin-top: 106px;
   display: flex;
   justify-content: space-between;
+}
+.myProjcets-projects-wrapper .myProjcets-card.invisible {
+  display: none;
 }
 .myProjcets-projects-wrapper img {
   width: 100%;
