@@ -22,7 +22,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 @font-face {
   font-family: "PoppinsSemiBold";
   src: url("../fonts/Poppins-SemiBold.woff2") format("woff2"),
@@ -39,7 +38,6 @@
   font-style: normal;
   font-display: swap;
 }
-
 * {
   margin: 0;
   padding: 0;
@@ -60,12 +58,13 @@ button {
   letter-spacing: -0.28px;
 }
 .container {
-  max-width: 1420px;
+  max-width: 375px;
+  padding-inline: 14px;
   width: 100%;
   margin: auto;
 }
 header.container {
-  margin-top: 61px;
+  margin-top: 21px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -77,9 +76,26 @@ header.container {
 }
 .header-nav ul {
   display: flex;
-  gap: 40px;
+  gap: 30px;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  left: 0;
+  text-align: center;
+  top: 10%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  overflow: hidden;
+  pointer-events: none;
   list-style: none;
   align-items: center;
+}
+.header-nav ul.active {
+  pointer-events: all;
+  height: auto;
+  opacity: 1;
+  background-color: #121212;
+  padding-block: 15px;
 }
 .header-nav ul li {
   line-height: 100%;
@@ -88,14 +104,25 @@ header a {
   font-size: 21px;
   letter-spacing: 0.63px;
 }
-header a,
+header a {
+  color: #ffffff;
+  text-decoration: none;
+}
 .header-nav button {
   color: #ffffff;
   text-decoration: none;
 }
 .burger-btn {
-  display: none;
-  transition: 0.3s ease-in-out;
+  display: block;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.burger-btn img.rotate {
+  transform: rotate(90deg);
+}
+.burger-btn.rotate {
+  transform: rotate(90deg);
 }
 .burger-btn img {
   transition: 0.3s ease-in-out;
@@ -128,7 +155,11 @@ header a,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 120px;
+  flex-direction: column;
+  margin-top: 80px;
+}
+.profile-wrapper.top .text-wrapper .description {
+  display: none;
 }
 .text-wrapper {
   max-width: 714px;
@@ -153,11 +184,15 @@ header a,
   line-height: 100%;
   letter-spacing: 0.72px;
 }
-.text-wrapper .description,
-.service-text-container p,
-.myProjects-container p,
-.testimonials-text-container p,
-.contact-container p {
+.text-wrapper .description {
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "PoppinsRegular";
+  margin-top: 28px;
+  letter-spacing: 0.63px;
+  text-align: start;
+}
+.service-text-container p {
   color: #ffffff;
   font-size: 21px;
   font-family: "PoppinsRegular";
@@ -165,7 +200,40 @@ header a,
   letter-spacing: 0.63px;
   text-align: justify;
 }
-.text-wrapper .highlight,
+.myProjects-container p {
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "PoppinsRegular";
+  margin-top: 28px;
+  letter-spacing: 0.63px;
+  text-align: justify;
+}
+.testimonials-text-container {
+  text-align: start;
+}
+.testimonials-text-container p {
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "PoppinsRegular";
+  margin-top: 28px;
+  letter-spacing: 0.63px;
+  text-align: start;
+}
+.contact-container p {
+  color: #ffffff;
+  font-size: 21px;
+  font-family: "PoppinsRegular";
+  margin-top: 40px;
+  letter-spacing: 0.63px;
+  text-align: start;
+}
+.text-wrapper .highlight {
+  font-family: "PoppinsSemiBold";
+  color: #fd6f00;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0.96px;
+}
 .service-card .card span {
   font-family: "PoppinsSemiBold";
   color: #fd6f00;
@@ -173,17 +241,20 @@ header a,
   line-height: 100%;
   letter-spacing: 0.96px;
 }
-.text-wrapper h1,
-.text-wrapper span {
-  font-family: "PoppinsBold";
-  font-size: 100px;
+.text-wrapper h1 {
+  font-family: "PoppinsMedium";
+  font-size: 58px;
   line-height: 120%;
   letter-spacing: 3px;
   color: #ffffff;
 }
 .text-wrapper span {
-  align-self: flex-end;
-  margin-top: -26px;
+  font-size: 58px;
+  align-self: flex-start;
+  font-family: "PoppinsBold";
+  line-height: 120%;
+  letter-spacing: 3px;
+  color: #ffffff;
 }
 .img-wrapper {
   max-width: 538px;
@@ -196,8 +267,8 @@ header a,
 .about-above-img {
   display: none;
 }
-.about-above-img.active {
-  display: block;
+.about-bottom-img {
+  display: none;
 }
 .text-wrapper button {
   margin-top: 22px;
@@ -216,14 +287,18 @@ header a,
   text-align: justify;
   align-self: flex-start;
 }
+.profile-wrapper button {
+  display: none;
+}
 .img-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  gap: 19px;
+  align-items: start;
   justify-content: center;
-  align-items: center;
 }
 .social-links {
-  margin-top: 40px;
+  margin-top: 19px;
   display: flex;
   justify-content: center;
   gap: 25px;
@@ -233,14 +308,38 @@ header a,
   width: 100%;
   cursor: pointer;
 }
-.text-wrapper h2,
-.service-text-container h2,
-.myProjects-container h2,
-.testimonials-text-container h2,
+.text-wrapper h2 {
+  font-family: "PoppinsSemiBold";
+  line-height: 100%;
+  font-size: 36px;
+  letter-spacing: 1.95px;
+  color: #ffffff;
+}
+.service-text-container h2 {
+  font-family: "PoppinsSemiBold";
+  line-height: 100%;
+  font-size: 36px;
+  letter-spacing: 1.95px;
+  color: #ffffff;
+}
+.myProjects-container h2 {
+  font-family: "PoppinsSemiBold";
+  line-height: 100%;
+  font-size: 36px;
+  letter-spacing: 1.95px;
+  color: #ffffff;
+}
+.testimonials-text-container h2 {
+  font-family: "PoppinsSemiBold";
+  line-height: 100%;
+  font-size: 36px;
+  letter-spacing: 1.95px;
+  color: #ffffff;
+}
 .contact-container h2 {
   font-family: "PoppinsSemiBold";
   line-height: 100%;
-  font-size: 65px;
+  font-size: 36px;
   letter-spacing: 1.95px;
   color: #ffffff;
 }
@@ -248,11 +347,14 @@ header a,
   max-width: 545px;
   width: 100%;
 }
+.bottom {
+  margin-top: 62px;
+}
 .diagram {
   margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 28px;
 }
 .diagram .slide {
   position: relative;
@@ -283,23 +385,31 @@ header a,
   background-color: #edecec;
   border: 3px solid #fd6f00;
 }
-.services-container,
-.myProjects-container,
+.services-container {
+  margin-top: 74px;
+}
+.myProjects-container {
+  margin-top: 140px;
+}
 .testimonials-container {
   margin-top: 140px;
 }
-.service-text-container,
-.myProjects-text-container,
-.testimonials-text-container,
-.contact-container {
-  text-align: center;
+.service-text-container {
+  text-align: start;
 }
-.service-text-container p,
-.myProjects-text-container p,
-.testimonials-text-container p,
-.contact-container p {
+.myProjects-text-container {
+  text-align: start;
+}
+.service-text-container p {
+  margin-top: 40px;
+  text-align: start;
+}
+.myProjects-text-container p {
+  margin-top: 40px;
+  text-align: start;
+}
+.testimonials-text-container p {
   margin-top: 20px;
-  text-align: center;
 }
 .service-card {
   max-width: 330px;
@@ -311,6 +421,9 @@ header a,
 .service-card-container {
   margin-top: 44px;
   display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
   justify-content: space-between;
 }
 .service-card .card {
@@ -346,10 +459,13 @@ header a,
   max-width: 82px;
 }
 .myProjects-container .btn-container {
-  margin-top: 60px;
   display: flex;
+  margin-top: 27px;
   gap: 17px;
-  justify-content: center;
+  overflow-x: scroll;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .myProjects-container .btn-container button {
   padding-block: 10px;
@@ -372,9 +488,12 @@ header a,
   text-decoration: none;
 }
 .myProjcets-projects-wrapper {
-  margin-top: 106px;
+  margin-top: 47px;
   display: flex;
+  flex-direction: column;
+  gap: 40px;
   justify-content: space-between;
+  align-items: center;
 }
 .myProjcets-projects-wrapper .myProjcets-card.invisible {
   display: none;
@@ -400,15 +519,15 @@ header a,
   margin-top: 12px;
 }
 .testimonials-slider-container {
-  margin-top: 80px;
+  margin-top: 30px;
   display: flex;
   justify-content: center;
 }
 .testimonials-slide {
   display: none;
-  max-width: 1087px;
+  max-width: 347px;
   width: 100%;
-  height: 344px;
+  height: 500px;
   background-color: #f8f8f8;
   border-radius: 14px;
 }
@@ -417,9 +536,11 @@ header a,
 }
 .testimonials-slide-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   height: 100%;
+  padding-inline: 22px;
 }
 .testimonials-slide-wrapper-text {
   max-width: 716px;
@@ -445,8 +566,8 @@ header a,
   line-height: 100%;
   text-align: justify;
   letter-spacing: 0.64px;
-  bottom: 84%;
-  left: -2%;
+  bottom: 95%;
+  left: -5%;
 }
 .testimonials-slide-wrapper-text p::after {
   position: absolute;
@@ -457,8 +578,8 @@ header a,
   line-height: 100%;
   text-align: justify;
   letter-spacing: 0.64px;
-  top: 89%;
-  margin-left: 10px;
+  top: 92.5%;
+  margin-left: 7px;
 }
 .testimonials-slide-wrapper span {
   display: block;
@@ -469,13 +590,22 @@ header a,
   text-align: justify;
 }
 .testimonials-slide-wrapper-img .position {
-  display: none;
+  display: flex;
+  gap: 17px;
 }
 .testimonials-slide-wrapper-img img {
+  max-width: 125px;
+  width: 100%;
   border-radius: 50%;
 }
-.position {
+.testimonials-slide-wrapper-img {
+  align-self: flex-start;
   display: flex;
+  align-items: center;
+  gap: 21px;
+}
+.position {
+  display: none;
   flex-direction: column;
   gap: 10px;
   font-size: 19px;
@@ -484,7 +614,7 @@ header a,
   text-align: justify;
 }
 .slider-dots {
-  margin-top: 87px;
+  margin-top: 38px;
   display: flex;
   height: 30px;
   gap: 9px;
@@ -503,13 +633,13 @@ header a,
   background-color: #fd6f00;
 }
 .contact-container {
+  text-align: start;
   margin-top: 90px;
 }
 .contact-form-container {
   margin-top: 50px;
 }
 .contact-form-container input {
-  max-width: 312px;
   width: 100%;
   border-radius: 14px;
   border: 1px solid #afafaf;
@@ -523,14 +653,14 @@ header a,
   font-size: 21px;
 }
 form {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   margin: auto;
   justify-content: center;
   column-gap: 28px;
   row-gap: 41px;
-  max-width: 994px;
+  max-width: 347px;
   width: 100%;
-  grid-template-columns: repeat(3, 1fr);
 }
 textarea {
   width: 100%;
@@ -570,8 +700,10 @@ textarea::placeholder {
   display: flex;
   list-style: none;
   justify-content: center;
-  margin-top: 290px;
+  margin-top: 50px;
   gap: 40px;
+  flex-direction: column;
+  align-items: center;
 }
 .footer-navigation.container a {
   transition: text-shadow 0.4s ease-in-out;
@@ -586,30 +718,31 @@ textarea::placeholder {
   text-decoration: none;
 }
 .footer-container {
+  margin-top: 86px;
+  flex-direction: column-reverse;
   display: flex;
-  flex-direction: column;
 }
 .rights {
   text-align: center;
-  margin-top: 62px;
+  margin-top: 55px;
   background-color: #121212;
   color: #ffffff;
-  padding-top: 19px;
-  padding-bottom: 33px;
-  font-size: 21px;
+  padding: 48px;
+  font-size: 16px;
   letter-spacing: 0.63px;
   line-height: 100%;
   width: 100%;
 }
 #dialog {
   position: absolute;
-  left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateY(-50%);
   border-radius: 10px;
   border: none;
   padding: 10px;
-  flex-direction: column;
+  margin-inline: auto;
+  text-align: justify;
+  left: 0;
 }
 #dialog .cross {
   color: red;

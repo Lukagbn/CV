@@ -20,10 +20,6 @@ setInterval(() => {
   imgWrapperIndex++;
 }, 5000);
 
-function sliderAnimation(index, width, left) {
-  diagramFill[index].style.width = `${width}%`;
-  diagramCircle[index].style.left = `${left}%`;
-}
 // burger icon logic
 
 const headerList = document.querySelector(".header-nav ul");
@@ -34,6 +30,10 @@ burgerIcon.addEventListener("click", (el) => {
 });
 
 // animating diagram sliders
+function sliderAnimation(index, width, left) {
+  diagramFill[index].style.width = `${width}%`;
+  diagramCircle[index].style.left = `${left}%`;
+}
 const options = {
   root: null,
   threshold: 0.3,
@@ -44,7 +44,7 @@ const observer = new IntersectionObserver((entries) => {
       sliderAnimation(0, 95, 93);
       sliderAnimation(1, 96, 94);
       sliderAnimation(2, 96, 94);
-      sliderAnimation(3, 98, 96);
+      sliderAnimation(3, 96, 94);
       observer.unobserve(entry.target);
     }
     return;
@@ -169,7 +169,6 @@ const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
 const errorMessage = document.querySelector(".errorMessage");
 const formGroup = document.querySelectorAll(".form-group");
 const contactBtn = contactForm.querySelector(".contact-btn");
-
 const closeContact = document.querySelector(".cross");
 closeContact.addEventListener("click", () => {
   dialog.close();
