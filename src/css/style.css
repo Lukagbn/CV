@@ -193,6 +193,12 @@ header a,
   max-width: 485px;
   width: 100%;
 }
+.about-above-img {
+  display: none;
+}
+.about-above-img.active {
+  display: block;
+}
 .text-wrapper button {
   margin-top: 22px;
   background-color: #fd6f00;
@@ -464,6 +470,9 @@ header a,
 }
 .testimonials-slide-wrapper-img .position {
   display: none;
+}
+.testimonials-slide-wrapper-img img {
+  border-radius: 50%;
 }
 .position {
   display: flex;

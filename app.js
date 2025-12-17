@@ -3,6 +3,23 @@ const diagram = profileSlider.querySelector(".diagram");
 const diagramFill = diagram.querySelectorAll(".fill");
 const diagramCircle = diagram.querySelectorAll(".circle");
 
+// about section slider
+
+const imgWrapperImg = document.querySelectorAll(".about-above-img");
+let imgWrapperIndex = 0;
+function updateIndex() {
+  imgWrapperImg.forEach((el, index) => {
+    el.classList.toggle("active", imgWrapperIndex === index);
+  });
+}
+setInterval(() => {
+  if (imgWrapperIndex === 2) {
+    imgWrapperIndex = 0;
+  }
+  updateIndex(imgWrapperIndex);
+  imgWrapperIndex++;
+}, 5000);
+
 function sliderAnimation(index, width, left) {
   diagramFill[index].style.width = `${width}%`;
   diagramCircle[index].style.left = `${left}%`;
@@ -55,7 +72,7 @@ function autoSlider() {
     activeIndex++;
     if (activeIndex > slide.length - 1) activeIndex = 0;
     if (activeIndex > dot.length - 1) activeIndex = 0;
-  }, 3000);
+  }, 5000);
 }
 autoSlider();
 dot.forEach((el, index) => {
@@ -79,36 +96,29 @@ const projectsContainer = document.querySelector(
   ".myProjcets-projects-wrapper"
 );
 const btnContainer = document.querySelectorAll(".btn-container button");
-const startingValue = "Web Design";
+
+fetch("./myProjects.json")
+  .then((res) => res.json())
+  .then((result) => {
+    projectsContainer.innerHTML = result
+      .map(
+        (element) => `
+      <div class="myProjcets-card invisible" data-group="${element.projectGroup}">
+        <a href="${element.projectUrl}" target="_blank">
+          <img src="${element.projectImg}" alt="project image" />
+        </a>
+        <p>${element.projectName}</p>
+        <h3>${element.projectTitle}</h3>
+      </div>
+    `
+      )
+      .join("");
+
+    const projectCards = projectsContainer.querySelectorAll(".myProjcets-card");
+    projectCards.forEach((card) => card.classList.remove("invisible"));
+  });
 
 btnContainer.forEach((el) => {
-  if (el.hasAttribute("active")) {
-    fetch("./myProjects.json")
-      .then((res) => res.json())
-      .then((result) => {
-        projectsContainer.innerHTML = result
-          .map(
-            (element) =>
-              `
-              <div class="myProjcets-card invisible"data-group="${element.projectGroup}">
-                <a href="${element.projectUrl}" target="_blank">
-                <img src="${element.projectImg}" alt="project image" />
-                </a>
-                <p>${element.projectName}</p>
-                <h3>${element.projectTitle}</h3>
-              </div>
-            `
-          )
-          .join("");
-        const projectName =
-          projectsContainer.querySelectorAll(".myProjcets-card");
-        projectName.forEach((card) => {
-          if (card.dataset.group === startingValue) {
-            card.classList.toggle("invisible");
-          }
-        });
-      });
-  }
   el.addEventListener("click", () => {
     const btnValue = el.value;
     console.log(btnValue);
@@ -161,7 +171,7 @@ const formGroup = document.querySelectorAll(".form-group");
 const contactBtn = contactForm.querySelector(".contact-btn");
 
 const closeContact = document.querySelector(".cross");
-closeContact.addEventListener("click", (e) => {
+closeContact.addEventListener("click", () => {
   dialog.close();
   body.classList.remove("overFlow-hidden");
   contactForm.reset();
