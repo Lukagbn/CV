@@ -113,7 +113,7 @@
   }
   .myProjcets-projects-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(2, 1fr);
   }
   .testimonials-text-container p {
     text-align: center;
@@ -218,8 +218,7 @@
   }
   .myProjcets-projects-wrapper {
     margin-top: 106px;
-    display: flex;
-    flex-direction: row;
+    grid-template-columns: repeat(3, 1fr);
   }
   .testimonials-text-container p {
     text-align: center;

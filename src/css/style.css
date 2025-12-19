@@ -391,6 +391,10 @@ header a {
 .myProjects-container {
   margin-top: 140px;
 }
+.myProjcets-card {
+  max-width: 445px;
+  width: 100%;
+}
 .testimonials-container {
   margin-top: 140px;
 }
