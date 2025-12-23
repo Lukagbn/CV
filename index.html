@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="src/css/minCss/minifiedResponsive.css" />
     <script type="module" src="app.js" defer></script>
     <title>luka gabunia</title>
+    <link
+      rel="shortcut icon"
+      href="./src/img/cv-icon.ico"
+      type="image/x-icon"
+    />
     <!-- google meta tags -->
     <meta name="description" content="Front-End Development" />
     <meta name="rating" content="adult" />
@@ -357,7 +362,12 @@
           <div class="contact-form-container">
             <form action="#" novalidate>
               <div class="form-group">
-                <input class="name" type="text" placeholder="Your Name" />
+                <input
+                  class="name"
+                  type="text"
+                  placeholder="Your Name"
+                  minlength="3"
+                />
                 <span class="errorMessage"></span>
               </div>
               <div class="form-group">
@@ -373,6 +383,7 @@
                   class="yourWeb"
                   type="text"
                   placeholder="Enter Your Website"
+                  minlength="5"
                 />
                 <span class="errorMessage"></span>
               </div>
@@ -381,6 +392,7 @@
                   name="message"
                   class="yourMessage"
                   placeholder="Enter Your Message"
+                  minlength="10"
                 ></textarea>
                 <span class="errorMessage"></span>
               </div>
